@@ -1,4 +1,4 @@
 import './style.css';
-import { updateView } from './router.ts';
+import { updateView } from './router/router.ts';
 
 updateView();

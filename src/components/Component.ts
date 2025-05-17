@@ -1,9 +1,11 @@
 export class IComponent<T = unknown> {
+  element: HTMLElement;
   props?: T;
-  render: () => string;
+  render: () => HTMLElement;
 
-  constructor(render: () => string, props?: T) {
-    this.render = render;
+  constructor(tagName: keyof HTMLElementTagNameMap, props?: T) {
+    this.element = document.createElement(tagName);
+    this.render = () => this.element;
     this.props = props;
   }
 }
